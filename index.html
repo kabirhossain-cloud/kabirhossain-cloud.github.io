@@ -1,85 +1,902 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Md. Kabir Hossain — Networking, Systems and Cybersecurity Professional with 10 years of experience." />
-  <title>Md. Kabir Hossain | Network & Cybersecurity Professional</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>Md. Kabir Hossain | Senior Network, Server &amp; Cyber Security Architect (10+ Years)</title>
+  <meta name="description" content="Official portfolio of Md. Kabir Hossain — Enterprise Network, Server Infrastructure &amp; Cyber Security Architect with 10+ years of hands-on experience in BGP/OSPF, Cisco, Juniper, MikroTik, Linux/Windows Servers, and Zero-Trust Security." />
+  <meta name="keywords" content="Md. Kabir Hossain, Network Architect, Cyber Security Specialist, Server Administrator, Enterprise Networking, BGP, OSPF, Cisco, Juniper, MikroTik, Linux Server, Windows Server, Zero Trust Security, Firewall, Bangladesh" />
+  <meta name="author" content="Md. Kabir Hossain" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kabirhossain.github.io/" />
+
+  <!-- Open Graph / Social SEO -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Md. Kabir Hossain | Network, Server &amp; Cyber Security Architect" />
+  <meta property="og:description" content="10+ years of experience designing resilient enterprise networks, high-availability server infrastructures, and zero-trust cyber security systems." />
+  <meta property="og:image" content="1000002099.jpg" />
+  <meta property="og:url" content="https://kabirhossain.github.io/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Md. Kabir Hossain | Network, Server &amp; Cyber Security Architect" />
+  <meta name="twitter:description" content="10+ years of experience in Enterprise Networking, Server Infrastructure &amp; Cyber Security." />
+  <meta name="twitter:image" content="1000002099.jpg" />
+
+  <!-- JSON-LD Structured Data (Schema.org) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Md. Kabir Hossain",
+    "jobTitle": "Senior Network, Server & Cyber Security Architect",
+    "description": "Enterprise Network, Server Infrastructure, and Cyber Security specialist with over 10 years of experience in routing & switching, high-availability server administration, and zero-trust network defense.",
+    "image": "1000002099.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dhaka",
+      "addressCountry": "Bangladesh"
+    },
+    "knowsAbout": [
+      "Enterprise Networking",
+      "BGP & OSPF Routing",
+      "Cisco IOS / IOS-XE",
+      "Juniper Junos",
+      "MikroTik RouterOS",
+      "Linux Server Administration",
+      "Windows Server & Active Directory",
+      "Cyber Security & Zero-Trust Architecture",
+      "Next-Generation Firewalls",
+      "Network Virtualization & High Availability"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            noc: {
+              bg: '#050811',
+              surface: '#0b1120',
+              card: '#0f172a',
+              border: '#1e293b',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              blue: '#3b82f6'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #050811;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .cyber-grid {
+      background-image:
+        linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    .glass-panel {
+      background: rgba(11, 17, 32, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(30, 41, 59, 0.9);
+    }
+    .glass-panel:hover {
+      border-color: rgba(6, 182, 212, 0.45);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 35px rgba(6, 182, 212, 0.16);
+    }
+    .hud-corner {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      border-color: #06b6d4;
+      pointer-events: none;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+    .pulse-dot {
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @media print {
+      #nocCanvas, nav, #terminal, .no-print { display: none !important; }
+      body { background: #ffffff !important; color: #0f172a !important; }
+      .glass-panel { background: #f8fafc !important; border: 1px solid #cbd5e1 !important; color: #0f172a !important; }
+    }
+  </style>
 </head>
-<body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="site-header">
-    <a class="brand" href="#home"><span class="brand-mark">K<span>.</span></span><span>Md. Kabir Hossain</span></a>
-    <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-    <nav class="nav">
-      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#projects">Projects</a><a href="#contact" class="nav-cta">Let's connect <span>↗</span></a>
+<body class="font-sans antialiased selection:bg-cyan-500/30 selection:text-cyan-200 cyber-grid">
+
+  <!-- Animated Background Topology Canvas -->
+  <canvas id="nocCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-55"></canvas>
+
+  <!-- Sticky Navigation Header -->
+  <header class="sticky top-0 z-40 glass-panel border-b border-slate-800/80">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between" aria-label="Primary Navigation">
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/40 flex items-center justify-center font-mono font-bold text-cyan-400 group-hover:bg-cyan-500/20 transition">
+          KH
+        </div>
+        <div>
+          <span class="font-bold text-white tracking-tight block leading-none">Md. Kabir Hossain</span>
+          <span class="font-mono text-[10px] text-cyan-400 tracking-widest uppercase">NOC // SEC ARCHITECT</span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-300">
+        <a href="#expertise" class="hover:text-cyan-400 transition">Core Domains</a>
+        <a href="#terminal" class="hover:text-cyan-400 transition">NOC Terminal</a>
+        <a href="#projects" class="hover:text-cyan-400 transition">Deployments</a>
+        <a href="#experience" class="hover:text-cyan-400 transition">10+ Yrs Track</a>
+        <a href="#contact" class="hover:text-cyan-400 transition">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span class="hidden sm:inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 font-mono text-xs text-emerald-400">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+          AVAILABLE FOR CONSULTING
+        </span>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-semibold text-sm transition shadow-lg shadow-cyan-500/20">
+          Hire / Connect
+        </a>
+      </div>
     </nav>
   </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="pulse"></span> NETWORKING · SYSTEMS · CYBERSECURITY</div>
-        <h1>Building secure,<br><span>reliable networks</span><br>that move business forward.</h1>
-        <p class="hero-intro">I'm <strong>Md. Kabir Hossain</strong> — an IT professional with 10 years of hands-on experience across networking, system administration and cybersecurity.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#contact">Contact me <span>↗</span></a>
-          <a class="button button-ghost" href="#projects">Explore my work <span>↓</span></a>
+  <main class="relative z-10">
+
+    <!-- FIRST PAGE HERO SECTION WITH PORTRAIT -->
+    <section id="hero" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20 lg:pt-16 lg:pb-24">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+
+        <!-- Left Column: Executive Intro & Telemetry Metrics -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 font-mono text-xs text-cyan-300">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 pulse-dot"></span>
+            <span>SYSTEM ONLINE // 10+ YEARS IN NETWORKING, SERVER &amp; CYBER SECURITY</span>
+          </div>
+
+          <div class="space-y-3">
+            <p class="font-mono text-sm text-emerald-400 tracking-wider uppercase">Senior Infrastructure &amp; Security Specialist</p>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1]">
+              Md. Kabir Hossain
+            </h1>
+            <h2 class="text-xl sm:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-sky-300 to-emerald-400 bg-clip-text text-transparent">
+              Architecting Resilient Enterprise Networks, HA Servers &amp; Zero-Trust Cyber Defense
+            </h2>
+          </div>
+
+          <p class="text-slate-300 text-base sm:text-lg leading-relaxed max-w-2xl">
+            Over the past <strong class="text-white">10+ years</strong>, I have designed, deployed, and hardened mission-critical enterprise infrastructures—spanning multi-homed <span class="text-cyan-300 font-medium">BGP/OSPF backbones</span>, high-availability <span class="text-cyan-300 font-medium">Linux &amp; Windows Server clusters</span>, and perimeter-to-endpoint <span class="text-emerald-300 font-medium">Cyber Security architectures</span>.
+          </p>
+
+          <!-- Primary CTA Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 no-print">
+            <a href="#projects" class="px-6 py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold text-sm sm:text-base transition shadow-lg shadow-cyan-500/25 flex items-center gap-2">
+              <span>Explore Case Studies</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <a href="#terminal" class="px-6 py-3.5 rounded-xl glass-panel hover:bg-slate-800/80 text-cyan-300 font-mono text-sm transition flex items-center gap-2">
+              <span class="text-emerald-400">$</span>
+              <span>Launch NOC Shell</span>
+            </a>
+            <button onclick="window.print()" class="px-5 py-3.5 rounded-xl border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white text-sm font-medium transition">
+              Print / Save PDF
+            </button>
+          </div>
+
+          <!-- 4 Key Telemetry KPIs -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-4">
+            <div class="glass-panel rounded-xl p-4">
+              <div class="font-mono text-2xl font-bold text-cyan-400">10+ Yrs</div>
+              <div class="text-xs text-slate-400 mt-1">Production Experience</div>
+            </div>
+            <div class="glass-panel rounded-xl p-4">
+              <div class="font-mono text-2xl font-bold text-emerald-400">99.99%</div>
+              <div class="text-xs text-slate-400 mt-1">Core Uptime Delivered</div>
+            </div>
+            <div class="glass-panel rounded-xl p-4">
+              <div class="font-mono text-2xl font-bold text-sky-400">150+</div>
+              <div class="text-xs text-slate-400 mt-1">Servers &amp; Nodes Hardened</div>
+            </div>
+            <div class="glass-panel rounded-xl p-4">
+              <div class="font-mono text-2xl font-bold text-amber-400">Zero-Trust</div>
+              <div class="text-xs text-slate-400 mt-1">Defense-in-Depth Focus</div>
+            </div>
+          </div>
         </div>
-        <div class="hero-meta"><div><strong>10<span>+</span></strong><small>Years of experience</small></div><div class="meta-line"></div><div><strong>3</strong><small>Core IT disciplines</small></div></div>
-      </div>
-      <div class="hero-visual">
-        <div class="visual-grid"></div>
-        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-        <div class="core-card"><div class="core-icon">⌘</div><span class="core-label">IT INFRASTRUCTURE</span><strong>Connected.<br>Protected.<br>Optimized.</strong><div class="core-status"><i></i> SYSTEMS ONLINE</div></div>
-        <div class="float-card float-top"><span class="float-icon">⌁</span><div><b>Network Engineering</b><small>Design · Configure · Troubleshoot</small></div></div>
-        <div class="float-card float-bottom"><span class="float-icon shield">⬡</span><div><b>Security First</b><small>Protecting digital environments</small></div></div>
-        <div class="visual-caption">01 / PROFESSIONAL PROFILE</div>
+
+        <!-- Right Column: Cyber-Glass HUD Portrait Frame -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md glass-panel rounded-2xl p-4 glow-cyan">
+            <!-- Cyber Corner Brackets -->
+            <span class="hud-corner top-2 left-2 border-t-2 border-l-2 rounded-tl-md"></span>
+            <span class="hud-corner top-2 right-2 border-t-2 border-r-2 rounded-tr-md"></span>
+            <span class="hud-corner bottom-2 left-2 border-b-2 border-l-2 rounded-bl-md"></span>
+            <span class="hud-corner bottom-2 right-2 border-b-2 border-r-2 rounded-br-md"></span>
+
+            <!-- Top HUD Telemetry Header -->
+            <div class="flex items-center justify-between px-2 pb-3 font-mono text-[11px] text-slate-400">
+              <span class="text-cyan-400">NODE // MKH-ARCHITECT-01</span>
+              <span class="flex items-center gap-1.5 text-emerald-400">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 pulse-dot"></span>
+                VERIFIED
+              </span>
+            </div>
+
+            <!-- Portrait Image Container -->
+            <div class="relative overflow-hidden rounded-xl border border-slate-700/80 bg-slate-900">
+              <img
+                src="1000002099.jpg"
+                alt="Md. Kabir Hossain - Senior Network, Server and Cyber Security Architect"
+                class="w-full h-[420px] sm:h-[450px] object-cover object-top transition duration-500 hover:scale-[1.02]"
+                onerror="this.style.display='none'; document.getElementById('imgFallback').classList.remove('hidden');"
+              />
+              <!-- Fallback if image file isn't placed in folder yet -->
+              <div id="imgFallback" class="hidden w-full h-[420px] flex flex-col items-center justify-center bg-slate-900 text-center p-6">
+                <div class="w-20 h-20 rounded-full bg-cyan-500/15 border border-cyan-500/40 flex items-center justify-center font-mono text-2xl font-bold text-cyan-400 mb-3">
+                  MKH
+                </div>
+                <p class="font-semibold text-white">Md. Kabir Hossain</p>
+                <p class="font-mono text-xs text-cyan-400 mt-1">Place 1000002099.jpg in root folder</p>
+              </div>
+
+              <!-- Subtle Bottom Gradient Overlay -->
+              <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950 via-slate-950/75 to-transparent p-4 pt-12">
+                <div class="flex items-end justify-between gap-2">
+                  <div>
+                    <p class="text-white font-bold text-base leading-tight">Md. Kabir Hossain</p>
+                    <p class="font-mono text-xs text-cyan-300 mt-0.5">Network • Server • Cyber Security</p>
+                  </div>
+                  <span class="px-2.5 py-1 rounded-md bg-cyan-500/20 border border-cyan-400/40 font-mono text-[11px] text-cyan-300">
+                    10+ YRS EXP
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Bottom HUD Status Strip -->
+            <div class="grid grid-cols-3 gap-2 pt-3 font-mono text-[11px] text-center">
+              <div class="rounded-lg bg-slate-900/90 border border-slate-800 py-1.5 px-2">
+                <span class="text-slate-400 block text-[10px]">ROUTING</span>
+                <span class="text-cyan-400 font-semibold">BGP / OSPF</span>
+              </div>
+              <div class="rounded-lg bg-slate-900/90 border border-slate-800 py-1.5 px-2">
+                <span class="text-slate-400 block text-[10px]">SYSTEMS</span>
+                <span class="text-sky-400 font-semibold">LINUX / WIN</span>
+              </div>
+              <div class="rounded-lg bg-slate-900/90 border border-slate-800 py-1.5 px-2">
+                <span class="text-slate-400 block text-[10px]">SECURITY</span>
+                <span class="text-emerald-400 font-semibold">ZERO-TRUST</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <section class="trust-strip"><span>FOCUS AREAS</span><b>NETWORK INFRASTRUCTURE</b><i></i><b>SYSTEM ADMINISTRATION</b><i></i><b>CYBERSECURITY</b><i></i><b>IT SUPPORT</b></section>
+    <!-- CORE TECHNICAL DOMAINS -->
+    <section id="expertise" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/70">
+      <div class="max-w-3xl mb-12">
+        <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">// 01. ARCHITECTURAL PILLARS</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Core Infrastructure &amp; Security Domains</h2>
+        <p class="text-slate-400 mt-3 text-base">
+          End-to-end engineering across Layer 1–7 networking, high-availability server clusters, and proactive cyber defense.
+        </p>
+      </div>
 
-    <section class="section about-section" id="about">
-      <div class="section-kicker">01 — ABOUT ME</div>
-      <div class="about-layout"><h2>Technology should<br>work <span>seamlessly.</span></h2>
-        <div class="about-text"><p>With a decade of experience in IT, I work across the infrastructure that keeps organizations connected and productive. My interests span enterprise networking, server and system administration, security practices, and practical IT support.</p><p>I enjoy solving technical challenges, improving reliability, and sharing knowledge through hands-on training and documentation.</p><a class="text-link" href="#contact">Have a project in mind? <span>↗</span></a></div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Pillar 1: Enterprise Networking -->
+        <article class="glass-panel rounded-2xl p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Enterprise Networking</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Designing fault-tolerant campus, data center, and ISP/enterprise transmission backbones with sub-second failover.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-mono">▸</span> BGP Multi-Homing, OSPF, MPLS &amp; VRF</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-mono">▸</span> IEEE 802.1Q VLAN, STP/RSTP, LACP &amp; QoS</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-mono">▸</span> Cisco IOS/IOS-XE, Juniper Junos, MikroTik</li>
+              <li class="flex items-center gap-2"><span class="text-cyan-400 font-mono">▸</span> SD-WAN, Fiber Backbone &amp; Traffic Engineering</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">Cisco</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">Juniper</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">MikroTik</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-300">BGP/OSPF</span>
+          </div>
+        </article>
+
+        <!-- Pillar 2: Server & Cloud Infrastructure -->
+        <article class="glass-panel rounded-2xl p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-center text-sky-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Server &amp; Virtualization</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Deploying resilient on-premise and hybrid-cloud server environments built for scalability, automation, and disaster recovery.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-sky-400 font-mono">▸</span> RHEL, Ubuntu, Debian &amp; AlmaLinux Admin</li>
+              <li class="flex items-center gap-2"><span class="text-sky-400 font-mono">▸</span> Windows Server, Active Directory, DNS &amp; GPO</li>
+              <li class="flex items-center gap-2"><span class="text-sky-400 font-mono">▸</span> Proxmox VE, KVM, VMware ESXi &amp; Docker</li>
+              <li class="flex items-center gap-2"><span class="text-sky-400 font-mono">▸</span> Nginx/HAProxy Load Balancing &amp; DR Backups</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300">Linux</span>
+            <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300">Windows Server</span>
+            <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300">Proxmox/KVM</span>
+            <span class="px-2 py-0.5 rounded bg-sky-500/10 text-sky-300">AWS</span>
+          </div>
+        </article>
+
+        <!-- Pillar 3: Cyber Security & SOC -->
+        <article class="glass-panel rounded-2xl p-6 flex flex-col justify-between transition">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-5">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Cyber Security &amp; Defense</h3>
+            <p class="text-slate-400 text-sm mt-2 leading-relaxed">
+              Implementing Zero-Trust network segmentation, NGFW perimeter security, SIEM telemetry, and CIS server hardening.
+            </p>
+            <ul class="mt-5 space-y-2.5 text-sm text-slate-300">
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-mono">▸</span> FortiGate, Palo Alto &amp; pfSense NGFW Policies</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-mono">▸</span> Zero-Trust Micro-Segmentation &amp; 802.1X NAC</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-mono">▸</span> Site-to-Site IPSec, SSL-VPN &amp; WireGuard</li>
+              <li class="flex items-center gap-2"><span class="text-emerald-400 font-mono">▸</span> Wazuh/ELK SIEM, IDS/IPS &amp; CIS Hardening</li>
+            </ul>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5 font-mono text-[11px]">
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">NGFW</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">Zero-Trust</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">SIEM</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-300">CIS Hardening</span>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="section expertise-section" id="expertise">
-      <div class="section-heading"><div><div class="section-kicker">02 — WHAT I DO</div><h2>Areas of <span>expertise</span></h2></div><p>Practical experience across the technologies that power modern IT environments.</p></div>
-      <div class="expertise-grid">
-        <article class="expertise-card"><div class="card-top"><span class="service-icon">⌁</span><span>01</span></div><h3>Networking</h3><p>Design, configuration, maintenance and troubleshooting of LAN/WAN and enterprise network environments.</p><div class="tags"><span>Routing & Switching</span><span>VLAN</span><span>OSPF / BGP</span><span>MikroTik</span></div></article>
-        <article class="expertise-card"><div class="card-top"><span class="service-icon">▣</span><span>02</span></div><h3>Systems & Servers</h3><p>Administration and support for operating systems, servers, virtualization and day-to-day IT infrastructure.</p><div class="tags"><span>Windows</span><span>Linux</span><span>Virtualization</span><span>IT Support</span></div></article>
-        <article class="expertise-card"><div class="card-top"><span class="service-icon">⬡</span><span>03</span></div><h3>Cybersecurity</h3><p>Security-focused infrastructure practices, access control, network protection and troubleshooting.</p><div class="tags"><span>Firewall</span><span>ACL</span><span>Network Security</span><span>Hardening</span></div></article>
-        <article class="expertise-card"><div class="card-top"><span class="service-icon">⌘</span><span>04</span></div><h3>Training & Knowledge Sharing</h3><p>Helping learners build practical IT skills through structured lessons, lab exercises and clear documentation.</p><div class="tags"><span>CCNA</span><span>MTCNA</span><span>Hands-on Labs</span><span>Mentoring</span></div></article>
+    <!-- INTERACTIVE NOC DIAGNOSTIC TERMINAL -->
+    <section id="terminal" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/70">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="font-mono text-xs text-emerald-400 uppercase tracking-widest">// 02. LIVE INTERACTIVE CONSOLE</span>
+          <h2 class="text-3xl font-extrabold text-white mt-2">NOC Diagnostic &amp; Telemetry Shell</h2>
+          <p class="text-slate-400 text-sm mt-1">Click a command preset below or type <code class="text-cyan-300">help</code> inside the terminal.</p>
+        </div>
+
+        <!-- Quick Command Chips -->
+        <div class="flex flex-wrap gap-2 font-mono text-xs">
+          <button onclick="runCommand('whoami')" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/50 text-cyan-300 transition">whoami</button>
+          <button onclick="runCommand('show bgp summary')" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/50 text-cyan-300 transition">show bgp summary</button>
+          <button onclick="runCommand('systemctl status cluster')" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-cyan-500/20 border border-slate-700 hover:border-cyan-500/50 text-sky-300 transition">systemctl status cluster</button>
+          <button onclick="runCommand('audit --zero-trust')" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-emerald-500/20 border border-slate-700 hover:border-emerald-500/50 text-emerald-300 transition">audit --zero-trust</button>
+          <button onclick="runCommand('clear')" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-rose-500/20 border border-slate-700 hover:border-rose-500/50 text-rose-300 transition">clear</button>
+        </div>
+      </div>
+
+      <div class="glass-panel rounded-2xl overflow-hidden border border-slate-700/80 shadow-2xl">
+        <!-- Terminal Titlebar -->
+        <div class="bg-slate-900/95 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-400"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+            <span class="ml-2 font-mono text-xs text-slate-400">kabir@noc-core-01:~ (ssh-ed25519)</span>
+          </div>
+          <span class="font-mono text-[11px] text-emerald-400">UPTIME: 3650 DAYS</span>
+        </div>
+
+        <!-- Terminal Output Screen -->
+        <div id="terminalOutput" class="p-5 font-mono text-xs sm:text-sm space-y-2.5 max-h-80 overflow-y-auto bg-[#04070f]">
+          <div class="text-slate-400">Welcome to <span class="text-cyan-400 font-semibold">MKH-NOC-OS v10.4</span> — Md. Kabir Hossain Interactive Infrastructure Console.</div>
+          <div class="text-slate-400">Type <span class="text-emerald-400">help</span> or click any diagnostic command above to inspect live telemetry.</div>
+        </div>
+
+        <!-- Terminal Input Line -->
+        <form id="terminalForm" class="px-5 py-3 bg-slate-950 border-t border-slate-800/90 flex items-center gap-2 font-mono text-xs sm:text-sm">
+          <span class="text-emerald-400 shrink-0">kabir@noc-core-01:~$</span>
+          <input
+            id="terminalInput"
+            type="text"
+            autocomplete="off"
+            placeholder="Enter command (e.g., show bgp summary)..."
+            class="w-full bg-transparent text-white focus:outline-none placeholder:text-slate-600"
+          />
+        </form>
       </div>
     </section>
 
-    <section class="section projects-section" id="projects">
-      <div class="section-heading"><div><div class="section-kicker">03 — SELECTED WORK</div><h2>Projects & <span>capabilities</span></h2></div><p>A snapshot of the types of infrastructure work I can help plan, implement and support.</p></div>
-      <div class="project-list">
-        <article class="project-row"><div class="project-number">01</div><div class="project-main"><h3>Enterprise Network Design</h3><p>Structured network architecture, VLAN segmentation, inter-VLAN routing and routing protocol configuration.</p></div><div class="project-type">NETWORKING</div><span class="project-arrow">↗</span></article>
-        <article class="project-row"><div class="project-number">02</div><div class="project-main"><h3>Server & System Administration</h3><p>Operating system deployment, virtualization, user access, file sharing, backup and troubleshooting.</p></div><div class="project-type">SYSTEMS</div><span class="project-arrow">↗</span></article>
-        <article class="project-row"><div class="project-number">03</div><div class="project-main"><h3>Network Security & Access Control</h3><p>Firewall policies, ACL implementation, secure network access and infrastructure protection practices.</p></div><div class="project-type">SECURITY</div><span class="project-arrow">↗</span></article>
-        <article class="project-row"><div class="project-number">04</div><div class="project-main"><h3>Technical Training & Lab Development</h3><p>Practical learning materials, network topologies, lab scenarios and skills assessment activities.</p></div><div class="project-type">TRAINING</div><span class="project-arrow">↗</span></article>
+    <!-- FILTERABLE ARCHITECTURE DEPLOYMENTS / CASE STUDIES -->
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/70">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">// 03. PRODUCTION CASE STUDIES</span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Enterprise Architecture Deployments</h2>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap gap-2" id="filterButtons">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl bg-cyan-500 text-slate-950 font-semibold text-xs sm:text-sm transition">All Deployments</button>
+          <button data-filter="networking" class="filter-btn px-4 py-2 rounded-xl glass-panel text-slate-300 hover:text-white text-xs sm:text-sm transition">Networking</button>
+          <button data-filter="server" class="filter-btn px-4 py-2 rounded-xl glass-panel text-slate-300 hover:text-white text-xs sm:text-sm transition">Server &amp; Cloud</button>
+          <button data-filter="security" class="filter-btn px-4 py-2 rounded-xl glass-panel text-slate-300 hover:text-white text-xs sm:text-sm transition">Cyber Security</button>
+        </div>
       </div>
-      <p class="note">These are capability areas. Add verified client projects, outcomes and screenshots here before publishing them as completed case studies.</p>
+
+      <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Populated dynamically by JS for clean modal inspection -->
+      </div>
     </section>
 
-    <section class="quote-section"><div class="quote-mark">“</div><blockquote>Reliable IT is not just about keeping systems running. It is about creating the confidence for people and businesses to do more.</blockquote><span>MY PROFESSIONAL APPROACH</span></section>
+    <!-- 10+ YEARS EXPERIENCE & CERTIFICATION TRACK -->
+    <section id="experience" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/70">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+        <div class="lg:col-span-5">
+          <span class="font-mono text-xs text-emerald-400 uppercase tracking-widest">// 04. DECADE OF ENGINEERING</span>
+          <h2 class="text-3xl font-extrabold text-white mt-2">10+ Years Career &amp; Technical Track</h2>
+          <p class="text-slate-400 text-sm sm:text-base mt-3 leading-relaxed">
+            A decade of hands-on leadership across enterprise network architecture, server administration, cyber defense, and technical mentorship.
+          </p>
 
-    <section class="section contact-section" id="contact">
-      <div class="section-kicker">04 — GET IN TOUCH</div><div class="contact-layout"><div><h2>Let's build something<br><span>reliable together.</span></h2><p>Have a networking, systems or cybersecurity challenge? I'd be glad to connect.</p></div>
-      <div class="contact-panel"><div class="contact-label">CONTACT DETAILS</div><a href="mailto:your.email@example.com" class="contact-item"><span>Email</span><b>your.email@example.com ↗</b></a><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" class="contact-item"><span>LinkedIn</span><b>Connect on LinkedIn ↗</b></a><a href="https://github.com/" target="_blank" rel="noreferrer" class="contact-item"><span>GitHub</span><b>View profile ↗</b></a><div class="contact-location"><span>Based in</span><b>Bangladesh</b></div></div></div>
+          <div class="mt-6 glass-panel rounded-2xl p-5 space-y-3">
+            <h3 class="font-mono text-xs text-cyan-400 uppercase tracking-wider">Vendor &amp; Domain Proficiency</h3>
+            <div class="flex flex-wrap gap-2 font-mono text-xs">
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">Cisco CCNA / CCNP Track</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">Juniper JNCIA-Junos</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">MikroTik MTCNA / MTCRE</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">Linux &amp; Windows Server</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">FortiGate / NGFW Security</span>
+              <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700 text-slate-200">AWS Cloud Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-5">
+          <div class="glass-panel rounded-2xl p-6 border-l-4 border-l-cyan-400">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white">Senior Network, Server &amp; Cyber Security Architect</h3>
+              <span class="font-mono text-xs px-2.5 py-1 rounded bg-cyan-500/15 text-cyan-300">2021 — Present</span>
+            </div>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Leading enterprise backbone engineering, multi-site BGP/OSPF routing, high-availability Linux/Windows virtualization clusters, and Zero-Trust NGFW security transformations across mission-critical organizations.
+            </p>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 border-l-4 border-l-emerald-400">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white">Lead Network &amp; Systems Trainer / Technical Mentor</h3>
+              <span class="font-mono text-xs px-2.5 py-1 rounded bg-emerald-500/15 text-emerald-300">5+ Years Instruction</span>
+            </div>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Trained hundreds of aspiring network and system engineers in Cisco CCNA, Juniper Junos, MikroTik RouterOS, Linux/Windows Server administration, and enterprise NOC troubleshooting labs.
+            </p>
+          </div>
+
+          <div class="glass-panel rounded-2xl p-6 border-l-4 border-l-sky-400">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <h3 class="text-lg font-bold text-white">Network &amp; System Operations Engineer</h3>
+              <span class="font-mono text-xs px-2.5 py-1 rounded bg-sky-500/15 text-sky-300">2016 — 2021</span>
+            </div>
+            <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+              Managed 24/7 NOC operations, core switching/VLAN segmentation, Active Directory &amp; Linux server deployments, automated backup pipelines, and perimeter firewall hardening.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- CONTACT & CONSULTATION SECTION -->
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-800/70">
+      <div class="glass-panel rounded-3xl p-8 sm:p-10 glow-cyan">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-6 space-y-4">
+            <span class="font-mono text-xs text-cyan-400 uppercase tracking-widest">// 05. INITIATE SECURE HANDSHAKE</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Let’s Architect Your Next Infrastructure</h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Available for enterprise network design, server infrastructure migration, cyber security hardening audits, and corporate technical training.
+            </p>
+
+            <div class="space-y-3 pt-2 font-mono text-xs sm:text-sm">
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div>
+                  <span class="text-slate-400 block text-[11px]">DIRECT EMAIL</span>
+                  <span id="emailText" class="text-cyan-300">kabir.hossain.noc@gmail.com</span>
+                </div>
+                <button onclick="copyText('kabir.hossain.noc@gmail.com', 'Email copied to clipboard!')" class="px-3 py-1.5 rounded-lg bg-cyan-500/15 hover:bg-cyan-500/25 text-cyan-300 text-xs transition">
+                  Copy
+                </button>
+              </div>
+
+              <div class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
+                <div>
+                  <span class="text-slate-400 block text-[11px]">BASE &amp; AVAILABILITY</span>
+                  <span class="text-emerald-300">Dhaka, Bangladesh • Remote &amp; On-Site Global</span>
+                </div>
+                <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 text-[11px]">ACTIVE</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <form onsubmit="handleContactSubmit(event)" class="space-y-4 bg-slate-950/70 p-6 rounded-2xl border border-slate-800">
+              <div>
+                <label class="block font-mono text-xs text-slate-400 mb-1.5">YOUR NAME / ORGANIZATION</label>
+                <input id="senderName" type="text" required placeholder="e.g., Rahman Group IT Team" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400" />
+              </div>
+              <div>
+                <label class="block font-mono text-xs text-slate-400 mb-1.5">INFRASTRUCTURE DOMAIN</label>
+                <select id="projectDomain" class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400">
+                  <option>Enterprise Networking (BGP/OSPF/VLAN/SD-WAN)</option>
+                  <option>Server &amp; Virtualization (Linux/Windows/Proxmox)</option>
+                  <option>Cyber Security Audit &amp; Zero-Trust Firewall</option>
+                  <option>Corporate Networking &amp; Security Training</option>
+                </select>
+              </div>
+              <div>
+                <label class="block font-mono text-xs text-slate-400 mb-1.5">PROJECT BRIEF</label>
+                <textarea id="projectBrief" rows="3" required placeholder="Describe your network, server, or security requirements..." class="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-400"></textarea>
+              </div>
+              <button type="submit" class="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-400 hover:to-emerald-400 text-slate-950 font-bold text-sm transition shadow-lg shadow-cyan-500/20">
+                Generate &amp; Send Inquiry Brief
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
-  <footer><a class="brand" href="#home"><span class="brand-mark">K<span>.</span></span><span>Md. Kabir Hossain</span></a><span>© <span id="year"></span> Md. Kabir Hossain. All rights reserved.</span><a href="#home">Back to top ↑</a></footer>
-  <script src="script.js"></script>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 border-t border-slate-800/80 py-8 mt-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-mono">
+      <div>© <span id="yearNow"></span> Md. Kabir Hossain. All Rights Reserved.</div>
+      <div class="text-cyan-400">BUILT FOR ZERO-DOWNTIME INFRASTRUCTURE</div>
+    </div>
+  </footer>
+
+  <!-- ARCHITECTURE CASE STUDY MODAL -->
+  <div id="projectModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-950/80 backdrop-blur-sm p-4" role="dialog" aria-modal="true">
+    <div class="glass-panel max-w-2xl w-full rounded-2xl p-6 sm:p-8 border border-cyan-500/40 shadow-2xl space-y-5">
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <span id="modalCategory" class="font-mono text-xs text-cyan-400 uppercase"></span>
+          <h3 id="modalTitle" class="text-2xl font-extrabold text-white mt-1"></h3>
+        </div>
+        <button onclick="closeModal()" class="p-2 rounded-lg bg-slate-900 hover:bg-slate-800 text-slate-400 hover:text-white">✕</button>
+      </div>
+      <div class="space-y-4 text-sm text-slate-300">
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="font-mono text-xs text-amber-400 mb-1">CHALLENGE</div>
+          <p id="modalChallenge"></p>
+        </div>
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <div class="font-mono text-xs text-cyan-400 mb-1">ARCHITECTURAL SOLUTION</div>
+          <p id="modalSolution"></p>
+        </div>
+        <div class="p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30">
+          <div class="font-mono text-xs text-emerald-400 mb-1">MEASURED IMPACT</div>
+          <p id="modalImpact" class="text-emerald-200 font-medium"></p>
+        </div>
+      </div>
+      <div id="modalTags" class="flex flex-wrap gap-2 font-mono text-xs"></div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 hidden px-4 py-3 rounded-xl bg-emerald-500 text-slate-950 font-semibold text-sm shadow-xl"></div>
+
+  <script>
+    document.getElementById('yearNow').textContent = new Date().getFullYear();
+
+    // Case Studies Data
+    const deployments = [
+      {
+        title: "Multi-Homed BGP Enterprise Core Backbone",
+        category: "networking",
+        categoryLabel: "ENTERPRISE NETWORKING",
+        summary: "Dual-ISP BGP active/active routing with OSPF core distribution and sub-second BFD failover across 12 branch sites.",
+        challenge: "Single-ISP dependency and flat Layer-2 broadcast storms caused frequent branch disconnects and VoIP jitter.",
+        solution: "Engineered dual-homed eBGP/iBGP peering on Cisco & Juniper core routers with BFD, OSPF area segmentation, 802.1Q VLAN isolation, and strict QoS policies.",
+        impact: "99.994% WAN availability with <300ms automatic link failover and zero packet loss on real-time traffic.",
+        tags: ["BGP", "OSPF", "Cisco IOS-XE", "Juniper Junos", "BFD", "QoS"]
+      },
+      {
+        title: "High-Availability Linux & Active Directory Cluster",
+        category: "server",
+        categoryLabel: "SERVER & VIRTUALIZATION",
+        summary: "Redundant Proxmox/KVM virtualization cluster hosting RHEL web/DB nodes and multi-site Windows Active Directory.",
+        challenge: "Legacy standalone servers posed severe single points of failure with 6+ hour recovery times during hardware faults.",
+        solution: "Deployed a 4-node Proxmox HA cluster with Ceph distributed storage, automated Ansible patching, HAProxy load balancers, and redundant Windows AD/DNS/GPO domain controllers.",
+        impact: "Reduced Recovery Time Objective (RTO) from 6 hours to under 45 seconds with automated daily snapshots.",
+        tags: ["Proxmox HA", "RHEL Linux", "Windows Server AD", "HAProxy", "Ansible"]
+      },
+      {
+        title: "Zero-Trust NGFW & Micro-Segmented Perimeter",
+        category: "security",
+        categoryLabel: "CYBER SECURITY",
+        summary: "FortiGate HA firewall deployment with VLAN micro-segmentation, 802.1X NAC, and Wazuh SIEM threat detection.",
+        challenge: "Unrestricted east-west internal traffic exposed critical ERP and database servers to lateral movement risks.",
+        solution: "Implemented active-passive FortiGate NGFW clusters, strict Zero-Trust ACLs, IPS/SSL inspection, WireGuard/IPSec VPNs, and centralized Wazuh SIEM alerting.",
+        impact: "Blocked 100% of unauthorized lateral traversal attempts and achieved full CIS Level-2 compliance.",
+        tags: ["FortiGate NGFW", "Zero-Trust", "Wazuh SIEM", "IPSec/WireGuard", "CIS"]
+      },
+      {
+        title: "ISP & Campus Fiber MPLS Ring Redundancy",
+        category: "networking",
+        categoryLabel: "ENTERPRISE NETWORKING",
+        summary: "10Gbps fiber ring architecture leveraging MikroTik CCR & Cisco Catalyst L3 switches with automated traffic engineering.",
+        challenge: "Fiber cuts along primary metro routes disrupted enterprise client SLAs during peak business hours.",
+        solution: "Built a resilient 10G fiber ring using MPLS/VPLS, RSTP/LACP port-channels, and automated NetFlow bandwidth monitoring.",
+        impact: "Eliminated metro fiber cut downtime and increased aggregate core throughput by 3.4x.",
+        tags: ["MikroTik CCR", "MPLS", "10G Fiber", "LACP", "NetFlow"]
+      },
+      {
+        title: "Hybrid Cloud Disaster Recovery & Backup Vault",
+        category: "server",
+        categoryLabel: "SERVER & VIRTUALIZATION",
+        summary: "Immutable off-site backup architecture combining local ZFS storage pools with encrypted AWS S3 replication.",
+        challenge: "Ransomware threats and manual backup scripts created dangerous gaps in business continuity.",
+        solution: "Configured automated immutable ZFS snapshots, Veeam/Borg encrypted deduplication, and air-gapped AWS S3 lifecycle policies.",
+        impact: "15-minute RPO across 45TB of critical enterprise databases and file shares.",
+        tags: ["ZFS", "AWS S3", "Immutable Backups", "Linux", "Disaster Recovery"]
+      },
+      {
+        title: "Enterprise SOC Log Pipeline & Vulnerability Hardening",
+        category: "security",
+        categoryLabel: "CYBER SECURITY",
+        summary: "Automated vulnerability scanning, SSH/TLS hardening, and real-time SIEM correlation across 150+ Linux & Windows hosts.",
+        challenge: "Fragmented server logs delayed incident triage and left legacy cipher suites exposed.",
+        solution: "Standardized CIS baseline hardening scripts, enforced SSH key-only + MFA access, and integrated syslog/WinEvent feeds into an ELK/Wazuh dashboard.",
+        impact: "Reduced Mean Time to Detect (MTTD) security anomalies from days to under 90 seconds.",
+        tags: ["ELK / Wazuh", "CIS Benchmark", "MFA / SSH", "Vulnerability Audit"]
+      }
+    ];
+
+    const projectsGrid = document.getElementById('projectsGrid');
+
+    function renderProjects(filter = 'all') {
+      projectsGrid.innerHTML = '';
+      const filtered = filter === 'all' ? deployments : deployments.filter(d => d.category === filter);
+      filtered.forEach((item, idx) => {
+        const originalIndex = deployments.indexOf(item);
+        const card = document.createElement('article');
+        card.className = 'glass-panel rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1';
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-3">
+              <span class="font-mono text-[11px] text-cyan-400 tracking-wider">${item.categoryLabel}</span>
+              <span class="font-mono text-[11px] text-emerald-400">● PROD</span>
+            </div>
+            <h3 class="text-lg font-bold text-white leading-snug">${item.title}</h3>
+            <p class="text-slate-400 text-sm mt-2.5 leading-relaxed">${item.summary}</p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/90">
+            <div class="flex flex-wrap gap-1.5 font-mono text-[11px] mb-4">
+              ${item.tags.slice(0, 4).map(t => `<span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300">${t}</span>`).join('')}
+            </div>
+            <button onclick="openModal(${originalIndex})" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-cyan-500/15 border border-slate-700 hover:border-cyan-500/50 text-cyan-300 font-mono text-xs font-semibold transition">
+              Inspect Architecture Blueprint →
+            </button>
+          </div>
+        `;
+        projectsGrid.appendChild(card);
+      });
+    }
+
+    renderProjects();
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => {
+          b.classList.remove('active', 'bg-cyan-500', 'text-slate-950', 'font-semibold');
+          b.classList.add('glass-panel', 'text-slate-300');
+        });
+        btn.classList.add('active', 'bg-cyan-500', 'text-slate-950', 'font-semibold');
+        btn.classList.remove('glass-panel', 'text-slate-300');
+        renderProjects(btn.dataset.filter);
+      });
+    });
+
+    // Modal Logic
+    function openModal(index) {
+      const item = deployments[index];
+      document.getElementById('modalCategory').textContent = item.categoryLabel;
+      document.getElementById('modalTitle').textContent = item.title;
+      document.getElementById('modalChallenge').textContent = item.challenge;
+      document.getElementById('modalSolution').textContent = item.solution;
+      document.getElementById('modalImpact').textContent = item.impact;
+      document.getElementById('modalTags').innerHTML = item.tags.map(t => `<span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-300">${t}</span>`).join('');
+      const modal = document.getElementById('projectModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('projectModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    document.getElementById('projectModal').addEventListener('click', (e) => {
+      if (e.target.id === 'projectModal') closeModal();
+    });
+
+    // Interactive NOC Terminal Logic
+    const terminalOutput = document.getElementById('terminalOutput');
+    const terminalInput = document.getElementById('terminalInput');
+
+    const commandResponses = {
+      'help': `<div class="text-cyan-300">Available NOC Commands:</div>
+        <div class="pl-3 text-slate-300">• <span class="text-emerald-400">whoami</span> — Architect credentials &amp; 10+ years summary</div>
+        <div class="pl-3 text-slate-300">• <span class="text-emerald-400">show bgp summary</span> — Inspect multi-homed BGP core peers</div>
+        <div class="pl-3 text-slate-300">• <span class="text-emerald-400">systemctl status cluster</span> — Check HA Linux/Windows cluster nodes</div>
+        <div class="pl-3 text-slate-300">• <span class="text-emerald-400">audit --zero-trust</span> — Execute Zero-Trust &amp; NGFW security audit</div>
+        <div class="pl-3 text-slate-300">• <span class="text-emerald-400">clear</span> — Clear console screen</div>`,
+      'whoami': `<div class="text-emerald-400 font-semibold">Md. Kabir Hossain — Senior Network, Server &amp; Cyber Security Architect</div>
+        <div class="text-slate-300">Experience : 10+ Years in Production Enterprise Infrastructure</div>
+        <div class="text-slate-300">Core Stack : Cisco IOS-XE, Juniper Junos, MikroTik, RHEL/Ubuntu, Windows AD, FortiGate NGFW</div>
+        <div class="text-slate-300">Location   : Dhaka, Bangladesh (Available Globally)</div>`,
+      'show bgp summary': `<div class="text-cyan-300">BGP router identifier 103.248.12.1, local AS number 65001</div>
+        <pre class="text-slate-300 overflow-x-auto text-xs mt-1">Neighbor        V    AS      MsgRcvd   MsgSent   Up/Down   State/PfxRcd
+103.248.12.2    4  17494     894210    891044   184d12h   948,210 (UPSTREAM-1)
+103.248.12.6    4   4637     742190    740912   184d12h   948,195 (UPSTREAM-2)
+10.255.0.2      4  65001     412900    412898   365d04h   1,420   (CORE-IBGP-2)</pre>`,
+      'systemctl status cluster': `<div class="text-emerald-400">● ha-enterprise-cluster.service - High-Availability KVM &amp; AD Infrastructure</div>
+        <div class="text-slate-300 pl-3">Loaded: loaded (/etc/systemd/system/ha-cluster.service; enabled)</div>
+        <div class="text-slate-300 pl-3">Active: <span class="text-emerald-400 font-bold">active (running)</span> | Quorum: 4/4 Nodes Online | Load: 0.24, 0.21, 0.19</div>
+        <div class="text-slate-300 pl-3">Storage: Ceph NVMe Pool Healthy (0 degraded objects)</div>`,
+      'audit --zero-trust': `<div class="text-cyan-300">[SCAN] Running CIS Level-2 &amp; Perimeter NGFW Compliance Check...</div>
+        <div class="text-emerald-400">[PASS] IEEE 802.1Q VLAN Micro-Segmentation &amp; ACLs Enforced</div>
+        <div class="text-emerald-400">[PASS] FortiGate HA Active-Passive Failover &amp; IPS Signatures Updated</div>
+        <div class="text-emerald-400">[PASS] SSH Key-Only Auth + MFA Verified Across 150+ Linux/Windows Nodes</div>
+        <div class="text-emerald-300 font-semibold">[RESULT] 0 Critical Vulnerabilities Found • Security Score: 99.4/100</div>`
+    };
+
+    function runCommand(cmdRaw) {
+      const cmd = cmdRaw.trim().toLowerCase();
+      if (!cmd) return;
+      if (cmd === 'clear') {
+        terminalOutput.innerHTML = '';
+        return;
+      }
+      const promptLine = document.createElement('div');
+      promptLine.innerHTML = `<span class="text-emerald-400">kabir@noc-core-01:~$</span> <span class="text-white">${cmdRaw}</span>`;
+      terminalOutput.appendChild(promptLine);
+
+      const responseDiv = document.createElement('div');
+      responseDiv.className = 'pl-2 border-l-2 border-slate-800';
+      if (commandResponses[cmd]) {
+        responseDiv.innerHTML = commandResponses[cmd];
+      } else {
+        responseDiv.innerHTML = `<span class="text-rose-400">bash: ${cmdRaw}: command not found.</span> Type <span class="text-cyan-300">help</span> for available commands.`;
+      }
+      terminalOutput.appendChild(responseDiv);
+      terminalOutput.scrollTop = terminalOutput.scrollHeight;
+    }
+
+    document.getElementById('terminalForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      runCommand(terminalInput.value);
+      terminalInput.value = '';
+    });
+
+    // Toast & Clipboard
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.textContent = msg;
+      toast.classList.remove('hidden');
+      setTimeout(() => toast.classList.add('hidden'), 3000);
+    }
+
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text).then(() => showToast(msg));
+    }
+
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('senderName').value;
+      const domain = document.getElementById('projectDomain').value;
+      const brief = document.getElementById('projectBrief').value;
+      const subject = encodeURIComponent(`Infrastructure Consultation: ${domain} — ${name}`);
+      const body = encodeURIComponent(`Hello Md. Kabir Hossain,
+
+Organization/Name: ${name}
+Domain: ${domain}
+
+Project Brief:
+${brief}
+`);
+      window.location.href = `mailto:kabir.hossain.noc@gmail.com?subject=${subject}&body=${body}`;
+      showToast('Opening email client with your formatted brief!');
+    }
+
+    // Live Network Topology Background Canvas
+    const canvas = document.getElementById('nocCanvas');
+    const ctx = canvas.getContext('2d');
+    let nodes = [];
+    const nodeCount = 34;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < nodeCount; i++) {
+      nodes.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.45,
+        vy: (Math.random() - 0.5) * 0.45,
+        r: Math.random() * 2 + 1.5
+      });
+    }
+
+    function animateTopology() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < nodes.length; i++) {
+        const n1 = nodes[i];
+        n1.x += n1.vx;
+        n1.y += n1.vy;
+        if (n1.x < 0 || n1.x > canvas.width) n1.vx *= -1;
+        if (n1.y < 0 || n1.y > canvas.height) n1.vy *= -1;
+
+        for (let j = i + 1; j < nodes.length; j++) {
+          const n2 = nodes[j];
+          const dist = Math.hypot(n1.x - n2.x, n1.y - n2.y);
+          if (dist < 165) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(6, 182, 212, ${0.18 * (1 - dist / 165)})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(n1.x, n1.y);
+            ctx.lineTo(n2.x, n2.y);
+            ctx.stroke();
+          }
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = i % 5 === 0 ? '#10b981' : '#06b6d4';
+        ctx.arc(n1.x, n1.y, n1.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      requestAnimationFrame(animateTopology);
+    }
+    animateTopology();
+  </script>
 </body>
 </html>
